@@ -17,62 +17,73 @@
       min-height: 100vh;
     }
     h1 {
-      color: #fff;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      font-size: 3rem;
+      font-weight: bold;
       margin-bottom: 40px;
+      /* Rainbow text effect */
+      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+      background-size: 1400% 1400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowText 8s linear infinite;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
     }
-
-    .gallery {
+    @keyframes rainbowText {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    .categories {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      max-width: 800px;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 600px;
       margin: 0 auto;
     }
-
-    .item {
+    .category {
       background: rgba(255, 255, 255, 0.8);
-      padding: 20px;
-      border-radius: 10px;
-      width: 200px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 1.3rem;
-      color: #111;
-      text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .item:hover {
-      background-color: #ffd700;
-      color: #000;
+      border-radius: 12px;
+      padding: 20px 30px;
+      width: 150px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       cursor: pointer;
+      color: #111;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+      user-select: none;
+    }
+    .category:hover {
+      background: #007bff;
+      color: white;
+      transform: scale(1.1);
     }
 
-    @media (max-width: 600px) {
-      .gallery {
-        flex-direction: column;
-        max-width: 100%;
-        gap: 15px;
+    /* Mobile responsiveness */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
       }
-
-      .item {
-        width: 100%;
+      .categories {
+        gap: 20px;
+      }
+      .category {
+        width: 120px;
+        padding: 15px 20px;
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <h1>best cnfans spreadsheet</h1>
+  <h1>SwampSheets</h1>
 
-  <div class="gallery">
-    <a href="shoes.html" class="item">Shoes</a>
-    <a href="hoodies.html" class="item">Hoodies</a>
+  <div class="categories">
+    <a href="shoes.html" class="category">Shoes</a>
+    <a href="hoodies.html" class="category">Hoodies</a>
   </div>
 
 </body>
