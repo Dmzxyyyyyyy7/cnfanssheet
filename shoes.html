@@ -2,17 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shoes – SwampSheets</title>
   <style>
     body {
       margin: 0;
       padding: 20px;
       font-family: sans-serif;
-      background-image: url('https://i.ibb.co/YTBM9HGd/swampik-reps.png');
-      background-repeat: no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                  url('https://i.ibb.co/YTBM9HGd/swampik-reps.png') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
       color: white;
       text-align: center;
       min-height: 100vh;
@@ -21,16 +19,16 @@
     h1 {
       font-family: 'Bestime', sans-serif;
       color: white;
-      font-size: 2.5rem;
+      font-size: 3rem;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
       font-weight: bold;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     .button-home {
       display: inline-block;
       margin-bottom: 20px;
-      padding: 12px 24px;
+      padding: 10px 20px;
       font-size: 1rem;
       color: white;
       background: rgba(0, 0, 0, 0.5);
@@ -50,29 +48,31 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      background-color: transparent;
       padding: 10px;
+      border-radius: 10px;
       max-width: 1000px;
       margin: 0 auto;
     }
 
     .item {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
       padding: 10px;
-      width: 100%;
-      max-width: 220px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      width: 200px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      color: black;
+      background: rgba(255, 255, 255, 0.8);
       transition: transform 0.3s;
     }
 
     .item:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
 
     .item img {
       width: 100%;
-      height: auto;
       border-radius: 8px;
+      height: auto;
       display: block;
     }
 
@@ -82,7 +82,7 @@
       text-decoration: none;
       color: #007bff;
       font-weight: bold;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
     }
 
     @media (max-width: 600px) {
@@ -90,20 +90,30 @@
         font-size: 2rem;
       }
 
-      .item a {
-        font-size: 1rem;
+      .gallery {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+        max-width: 90%;
       }
 
-      .gallery {
-        gap: 16px;
+      .item {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
       }
 
       .button-home {
+        padding: 12px 25px;
         font-size: 1.1rem;
-        padding: 12px 20px;
+      }
+
+      .item a {
+        font-size: 1.2rem;
       }
     }
 
+    /* Load Bestime font */
     @font-face {
       font-family: 'Bestime';
       src: url('https://fonts.cdnfonts.com/s/12626/Bestime-9Y2DK.woff') format('woff');
@@ -113,89 +123,89 @@
 <body>
 
   <a href="index.html" class="button-home">Home</a>
+
   <h1>Shoes</h1>
 
   <div class="gallery">
-    <!-- Existing + new shoes preserved -->
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=7268062696&ref=73572&redirected=true" target="_blank">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=7268062696&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/pcitem1888104055-19a800000192e802daa20a239846-unadjust_1200_1200.png" alt="Jordan 4s" />
         Jordan 4s
       </a>
     </div>
 
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=5388870048&ref=73572" target="_blank">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=5388870048&ref=73572" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/wdseller901682345136-741000000184033575d00a23132d_2560_2560.jpg" alt="Jordan 1" />
         Jordan 1
       </a>
     </div>
 
     <div class="item">
-      <a href="https://www.cnfanssheets.com/products/travis-scott-x-jordan-jumpman-jack" target="_blank">
+      <a href="https://www.cnfanssheets.com/products/travis-scott-x-jordan-jumpman-jack" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/wdseller1437660918-7bb50000018bc4928a180a23132d_1170_1170.jpg" alt="Travis Scott x Jordan Jumpman Pack" />
         Travis Scott x Jordan Jumpman Pack
       </a>
     </div>
 
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=5781730867&ref=73572&redirected=true" target="_blank">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=5781730867&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
         <img src="https://grailpoint.com/wp-content/uploads/2024/01/nike-sb-dunk-low-travis-scott.jpg" alt="Nike Dunk Low Travis Scott" />
         Nike Dunk Low Travis Scott
       </a>
     </div>
 
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=7313304330&ref=73572&redirected=true" target="_blank">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=7313304330&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/open1733523732-1234478995-63060000019379892d910a210559_999_1001.jpg" alt="Nike Dunk Lobsters" />
         Nike Dunk Lobsters
       </a>
     </div>
 
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=7327230068&ref=73572&redirected=true" target="_blank">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=7327230068&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/open1638087569-1234478995-6d0a00000193d93fbd0b0aa0834c_1170_1312.jpg" alt="More Jordan 1s" />
         More Jordan 1s
       </a>
     </div>
 
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=5159426569&ref=73572" target="_blank">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=5159426569&ref=73572" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/wdseller1437660918-7e7c00000183de9a07060a23029f_1242_1656.jpg" alt="Jordan 1 Lows" />
         Jordan 1 Lows
       </a>
     </div>
 
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=4479670015&ref=73572" target="_blank">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=4479670015&ref=73572" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/wdseller901540167493-14e1000001786dc22e4b0a21c2a8_1125_688.jpg" alt="Nike Dunk Lows" />
         Nike Dunk Lows
       </a>
     </div>
 
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=4985652016&ref=73572&redirected=true" target="_blank">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=4985652016&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/pcitem1594556374-445e00000186db167e0f0a23132e-unadjust_569_419.png" alt="Nike SB Dunk Low Chunky Dunky" />
         Nike SB Dunk Low Chunky Dunky
       </a>
     </div>
 
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=7272344656&ref=73572&redirected=true" target="_blank">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=7272344656&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/pcitem1888104055-79cf00000192ebd952090a23038e_1200_1200.jpg" alt="Air Force 1s" />
         Air Force 1s
       </a>
     </div>
 
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=4608345170&ref=73572" target="_blank">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=4608345170&ref=73572" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/wdseller1610144534-504d0000018f6840df890a20e35c_1242_1656.jpg" alt="Bapestas" />
         Bapestas
       </a>
     </div>
 
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=4480454092&ref=73572" target="_blank">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=4480454092&ref=73572" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/wdseller1386929838-227f00000173d87e80db0a217216_1125_720.jpg" alt="Yeezy Slides" />
         Yeezy Slides
       </a>
