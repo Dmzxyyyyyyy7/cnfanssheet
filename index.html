@@ -1,58 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Clothes Gallery</title>
+  <meta charset="UTF-8" />
+  <title>SwampSheets</title>
   <style>
+    @keyframes rainbowText {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     body {
-      font-family: sans-serif;
-      background-color: #f4f4f4;
-      text-align: center;
+      margin: 0;
       padding: 20px;
+      font-family: sans-serif;
+      background-image: url('https://i.ibb.co/YTBM9HGd/swampik-reps.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      min-height: 100vh;
     }
-    h1 {
-      color: #333;
+
+    /* Rainbow animated text class */
+    .rainbow-text {
+      background: linear-gradient(
+        270deg,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet,
+        red
+      );
+      background-size: 1400% 1400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowText 6s ease infinite;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      margin-bottom: 40px;
     }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+
+    /* Category heading style */
+    h2.category {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
     }
-    .item {
-      background: white;
-      padding: 10px;
-      border-radius: 10px;
-      width: 200px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .item img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .item a {
-      display: block;
-      margin-top: 10px;
+
+    h2.category a {
+      color: #fff;
       text-decoration: none;
-      color: #007bff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    h2.category a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <h1>best cnfans spredsheet<h1>
-  <div class="gallery">
-    <div class="item">
-      <img src="https://si.geilicdn.com/open1620179513-252808396-0be20000018f5721a95a0a210298_620_620.jpg" alt="Shirt">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=7402639878&ref=73572&redirected=true" target="_blank">View Shirt</a>
-    </div>
-    <div class="item">
-      <img src="https://example.com/shoes.jpg" alt="Shoes">
-      <a href="https://store.com/shoes" target="_blank">View Shoes</a>
-    </div>
-    <!-- Add more items like this below -->
-  </div>
+  <h1 class="rainbow-text">SwampReps</h1>
+
+  <!-- Category heading renamed to Shoes -->
+  <h2 class="category">
+    <a href="nike.html" target="_blank">Shoes</a>
+  </h2>
 
 </body>
 </html>
-
