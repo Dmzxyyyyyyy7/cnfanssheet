@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -101,14 +101,26 @@
 
   <script>
     const productsData = [
-      { name: "Jordan 4s", category: "Shoes", link: "https://cnfans.com/product/?shop_type=weidian&id=7268062696&ref=73572&redirected=true", image: "https://si.geilicdn.com/pcitem1888104055-19a800000192e802daa20a239846-unadjust_1200_1200.png" },
-      { name: "Jordan 1", category: "Shoes", link: "https://cnfans.com/product/?shop_type=weidian&id=5388870048&ref=73572", image: "https://si.geilicdn.com/wdseller901682345136-741000000184033575d00a23132d_2560_2560.jpg" },
-      { name: "Travis Scott x Jordan Jumpman Pack", category: "Shoes", link: "https://www.cnfanssheets.com/products/travis-scott-x-jordan-jumpman-jack", image: "https://si.geilicdn.com/wdseller1437660918-7bb50000018bc4928a180a23132d_1170_1170.jpg" },
+      // Shoes
+      { name: "Jordan 4s", category: "Shoes", link: "https://cnfans.com/product/?shop_type=weidian&id=7268062696&ref=73572&redirected=true", image: "https://www.spicysneakers.pl/cdn/shop/files/17.png?v=1689079758&width=1200" },
+      { name: "Jordan 1", category: "Shoes", link: "https://cnfans.com/product/?shop_type=weidian&id=5388870048&ref=73572", image: "https://skstore.eu/storage/media/f1000/2023/nike/227287/air-jordan-1-retro-high-og-dz5485-130-66028d6ec18ab.jpg" },
+      { name: "Travis Scott x Jordan Jumpman Pack", category: "Shoes", link: "https://www.cnfanssheets.com/products/travis-scott-x-jordan-jumpman-jack", image: "https://grailpoint.com/wp-content/uploads/2024/04/nike-jumpmanjack.png" },
+
+      // Hoodies
       { name: "Polo Ralph Lauren Double-Knit Zip-Up Hoodie", category: "Hoodies", link: "https://cnfans.com/product/?shop_type=weidian&id=6990966530&ref=73572&redirected=true", image: "https://si.geilicdn.com/pcitem1806271682-6b020000019156da6e4c0a230115_1512_2016.jpg" },
       { name: "Revenge Hoodies", category: "Hoodies", link: "https://cnfans.com/product/?shop_type=taobao&id=657044854028&ref=73572&redirected=true", image: "https://img.alicdn.com/bao/uploaded/i1/1870080098/O1CN01igqQOe1CavWZnReOm_!!1870080098.jpg" },
       { name: "Supreme Box Logo Hoodie", category: "Hoodies", link: "https://cnfans.com/product/?shop_type=taobao&id=610091368671&ref=73572&redirected=true", image: "https://img.alicdn.com/bao/uploaded/i4/1645018426/O1CN0192OHRm2C79q23ZXGM_!!1645018426.jpg" },
       { name: "Trapstar Hoodies", category: "Hoodies", link: "https://www.cnfanssheets.com/products/bunch-of-trapstar-hoodies-28-variants", image: "https://img.alicdn.com/bao/uploaded/i2/34964239/O1CN014mFoQT1hBVyF2qBS8_!!34964239.jpg" },
-      { name: "Nike Tech Fleece Hoodies", category: "Hoodies", link: "https://cnfans.com/product/?shop_type=weidian&id=6553113574&ref=73572&redirected=true", image: "https://si.geilicdn.com/pcitem1773215124-528200000195e3e3641b0a23111a_800_800.jpg" }
+      { name: "Nike Tech Fleece Hoodies", category: "Hoodies", link: "https://cnfans.com/product/?shop_type=weidian&id=6553113574&ref=73572&redirected=true", image: "https://si.geilicdn.com/pcitem1773215124-528200000195e3e3641b0a23111a_800_800.jpg" },
+
+      // Pants/Shorts
+      { name: "Gallery Dept Pants (26 Variants)", category: "Pants/Shorts", link: "https://cnfans.com/product/?shop_type=taobao&id=756275697322&ref=73572&redirected=true", image: "https://img.alicdn.com/bao/uploaded/i1/574102188/O1CN01956YVD1S29Yagn3BV_!!574102188.jpg" },
+
+      // Hats
+      { name: "Chrome Hearts Beanies", category: "Hats", link: "https://cnfans.com/product/?shop_type=ali_1688&id=822531847044&ref=73572&redirected=true", image: "https://i.imgur.com/uPbzFGQ.png" },
+
+      // Accessories
+      { name: "Goyard Card Holder", category: "Accessories", link: "https://cnfans.com/product/?shop_type=taobao&id=675330231400&ref=73572&redirected=true", image: "https://i.imgur.com/Q3Vk14j.png" }
     ];
 
     const searchBar = document.getElementById('search-bar');
@@ -132,9 +144,31 @@
         if (product.name.toLowerCase().includes(query)) {
           resultsHTML += `
             <a href="${product.link}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; width: 150px;">
-              <div style="background: rgba(240,240,240,0.9); border-radius: 10px; padding: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <img src="${product.image}" alt="${product.name}" style="width: 100%; border-radius: 8px; height: auto; display: block; margin-bottom: 8px;">
-                <div style="font-weight: bold; font-size: 0.9rem; color: black;">${product.name}</div>
+              <div style="
+                background: rgba(240,240,240,0.9);
+                border-radius: 10px;
+                padding: 10px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 230px;
+                justify-content: flex-start;
+              ">
+                <div style="
+                  width: 100%;
+                  height: 150px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background: white;
+                  border-radius: 8px;
+                  overflow: hidden;
+                  margin-bottom: 8px;
+                ">
+                  <img src="${product.image}" alt="${product.name}" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;">
+                </div>
+                <div style="font-weight: bold; font-size: 0.9rem; color: black; text-align: center;">${product.name}</div>
               </div>
             </a>
           `;

@@ -4,18 +4,21 @@
   <meta charset="UTF-8" />
   <title>T-Shirts – SwampSheets</title>
   <style>
+    /* Import Roboto Mono font from Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
     body {
-      margin: 0;
+      margin: 10;
       padding: 20px;
-      font-family: sans-serif;
-      background-color: white; /* changed here */
-      color: black;            /* changed here */
+      font-family: 'Roboto Mono';
+      background-color: white;
+      color: black;
       text-align: center;
       min-height: 100vh;
     }
     h1 {
-      color: black;            /* changed here */
-      text-shadow: none;       /* removed shadow for clarity */
+      color: black;
+      text-shadow: none;
       margin-bottom: 40px;
     }
     .button-home {
@@ -23,9 +26,9 @@
       margin-bottom: 20px;
       padding: 10px 20px;
       font-size: 1rem;
-      color: black;            /* changed here */
-      background: rgba(255, 255, 255, 0.9); /* lighter background */
-      border: 2px solid black; /* changed here */
+      color: black;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid black;
       border-radius: 6px;
       text-decoration: none;
       transition: background 0.3s, color 0.3s;
@@ -52,16 +55,39 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       color: black;
       background: rgba(255, 255, 255, 0.8);
-    }
-    .item img {
-      width: 100%;
-      border-radius: 8px;
+
+      /* Fade-in animation */
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
     }
     .item a {
       display: block;
-      margin-top: 10px;
       text-decoration: none;
-      color: #007bff;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+    }
+    .item a:hover {
+      color: #555;
+    }
+    .item a img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .item a span {
+      display: block;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
     }
   </style>
 </head>
@@ -74,8 +100,10 @@
   <div class="gallery">
     <!-- Your products here -->
     <div class="item">
-      <img src="https://si.geilicdn.com/pcitem1583459867-23a00000018ecbc668e20a23954a_1284_1712.jpg" alt="Chrome Hearts Tee" />
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=7234319492&ref=73572&redirected=true" target="_blank">Chrome Hearts Tee</a>
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=7234319492&ref=73572&redirected=true" target="_blank">
+        <img src="assets/hearts.png" alt="Chrome Hearts Tee" />
+        <span>Chrome Hearts Tees</span>
+      </a>
     </div>
   </div>
 

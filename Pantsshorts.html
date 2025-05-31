@@ -4,39 +4,43 @@
   <meta charset="UTF-8" />
   <title>Pants/Shorts – SwampSheets</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+    
     body {
       margin: 0;
       padding: 20px;
-      font-family: sans-serif;
-      background-image: url('https://i.ibb.co/YTBM9HGd/swampik-reps.png');
+      font-family: 'Roboto Mono';
+      font-weight:bold;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      color: white;
+      color: black;
       text-align: center;
       min-height: 100vh;
     }
+
     h1 {
-      color: #fff;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      color: black;
       margin-bottom: 40px;
     }
+
     .button-home {
       display: inline-block;
       margin-bottom: 20px;
       padding: 10px 20px;
       font-size: 1rem;
-      color: white;
-      background: rgba(0, 0, 0, 0.5);
-      border: 2px solid white;
+      color: black;
+      border: 2px solid black;
       border-radius: 6px;
       text-decoration: none;
       transition: background 0.3s, color 0.3s;
     }
+
     .button-home:hover {
       background: white;
       color: black;
     }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -46,6 +50,7 @@
       max-width: 1000px;
       margin: 0 auto;
     }
+
     .item {
       background: rgba(255, 255, 255, 0.8);
       padding: 10px;
@@ -54,29 +59,50 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       color: #111;
       text-decoration: none;
+
+      /* Fade-in animation */
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.8s ease forwards;
     }
+
     .item img {
       width: 100%;
       border-radius: 8px;
       cursor: pointer;
     }
+
     .item a {
       display: block;
       margin-top: 10px;
       font-weight: bold;
-      color: #007bff;
+      color: black;
       text-decoration: none;
       cursor: pointer;
     }
+
     .item a:hover {
       text-decoration: underline;
     }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 600px) {
       .gallery {
         flex-direction: column;
         max-width: 100%;
         gap: 15px;
       }
+
       .item {
         width: 90vw;
         max-width: 300px;

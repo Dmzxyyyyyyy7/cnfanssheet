@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Hoodie Gallery Test</title>
+<style>
+  body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #222;
+    color: white;
+    margin: 0; padding: 20px;
+    text-align: center;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .item {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+    width: 220px;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+  }
+
+  .item:hover {
+    transform: scale(1.05);
+  }
+
+  .item img {
+    width: 200px !important;
+    height: 150px !important;
+    object-fit: cover !important;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .item a {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Hoodie Gallery Test</h1>
+
+<div class="gallery">
+  <div class="item">
+    <a href="#" target="_blank" rel="noopener noreferrer">
+      <img src="https://img01.ztat.net/article/spp-media-p1/4152729a65904ff38da67e7f7724963b/af38dade6d36430d862c7d84ca50b2b2.jpg?imwidth=1800&filter=packshot" alt="Polo Ralph Lauren Double-Knit Zip-Up Hoodie" />
+      Polo Ralph Lauren Double-Knit Zip-Up Hoodie
+    </a>
+  </div>
+  <div class="item">
+    <a href="#" target="_blank" rel="noopener noreferrer">
+      <img src="https://grailpoint.com/wp-content/uploads/2020/09/44-1.jpg" alt="Revenge Hoodies" />
+      Revenge Hoodies
+    </a>
+  </div>
+  <div class="item">
+    <a href="#" target="_blank" rel="noopener noreferrer">
+      <img src="https://krkkicks.pl/wp-content/uploads/2023/03/ksamf.png" alt="Supreme Box Logo Hoodie" />
+      Supreme Box Logo Hoodie
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

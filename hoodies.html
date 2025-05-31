@@ -1,71 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="stylesheet" href="style.css">
-
-
+<head> 
   <meta charset="UTF-8" />
   <title>Hoodies – SwampSheets</title>
   <style>
-    /* Import Roboto Mono font from Google Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-    
 
     body {
       margin: 0;
       padding: 20px;
       font-family: 'Roboto Mono', monospace;
-      background-size: cover;
-      color: white;
+      font-weight:bold;
+      background: white;
+      color: black;
       text-align: center;
       min-height: 100vh;
     }
-    .text-container {
-  display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
-  width: 100%; /* Ensures full width */
-  height: 100vh; /* Adjust based on your container */
-  text-align: center; /* Aligns text */
-}
-.item:nth-child(1) { animation-delay: 0.1s; }
-    .item:nth-child(2) { animation-delay: 0.15s; }
-    .item:nth-child(3) { animation-delay: 0.2s; }
-    .item:nth-child(4) { animation-delay: 0.25s; }
-    .item:nth-child(5) { animation-delay: 0.3s; }
-    .item:nth-child(6) { animation-delay: 0.35s; }
-    .item:nth-child(7) { animation-delay: 0.4s; }
-    .item:nth-child(8) { animation-delay: 0.45s; }
-    .item:nth-child(9) { animation-delay: 0.5s; }
-    .item:nth-child(10) { animation-delay: 0.55s; }
-    .item:nth-child(11) { animation-delay: 0.6s; }
-    .item:nth-child(12) { animation-delay: 0.65s; }
-
-    
-
-
 
     h1 {
-      font-family: 'Roboto Mono', monospace;
       color: black;
       font-size: 3rem;
-      font-weight: bold;
       margin-bottom: 40px;
     }
-    
 
     .button-home {
       display: inline-block;
       margin-bottom: 20px;
       padding: 10px 20px;
       font-size: 1rem;
-      color: white;
-      background: rgba(0, 0, 0, 0.5);
-      border: 2px solid white;
+      color: black;
+      background: white;
+      border: 2px solid black;
       border-radius: 6px;
       text-decoration: none;
       transition: background 0.3s, color 0.3s;
-      font-family: 'Roboto Mono', monospace; /* ensure button uses Roboto Mono */
     }
 
     .button-home:hover {
@@ -78,42 +46,24 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      background-color: transparent;
-      padding: 10px;
-      border-radius: 10px;
       max-width: 1000px;
       margin: 0 auto;
-      font-family: 'Roboto Mono', monospace; /* gallery font */
     }
 
     .item {
+      background: rgba(255, 255, 255, 0.9);
       padding: 10px;
       border-radius: 10px;
-      width: 200px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 230px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       color: black;
-      background: rgba(255, 255, 255, 0.8);
+      font-family: 'Roboto Mono', monospace;
       transition: transform 0.3s;
+
+      /* Fade-in animation */
       opacity: 0;
       transform: translateY(20px);
       animation: fadeIn 0.8s ease forwards;
-      font-family: 'Roboto Mono', monospace; /* item font */
-    }
-    
-
-    .item:nth-child(1) { animation-delay: 0.1s; }
-    .item:nth-child(2) { animation-delay: 0.2s; }
-    .item:nth-child(3) { animation-delay: 0.3s; }
-    .item:nth-child(4) { animation-delay: 0.4s; }
-    .item:nth-child(5) { animation-delay: 0.5s; }
-    .item:nth-child(6) { animation-delay: 0.6s; }
-    .item:nth-child(7) { animation-delay: 0.7s; }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .item:hover {
@@ -121,10 +71,12 @@
     }
 
     .item img {
-      width: 100%;
+      width: 200px !important;
+      height: 230px !important;
+      object-fit: cover !important;
       border-radius: 8px;
-      height: auto;
       display: block;
+      margin: 0 auto;
     }
 
     .item a {
@@ -134,59 +86,28 @@
       color: black;
       font-weight: bold;
       font-size: 1.1rem;
-      font-family: 'Roboto Mono', monospace; /* links font */
     }
-    
-    .container {
-  display: flex;
-  flex-direction: column; /* Adjust to 'row' if you want them side by side */
-  align-items: center; /* Centers items horizontally */
-  justify-content: center; /* Centers items vertically */
-  text-align: center; /* Ensures text is centered */
-  width: 100%;
-}
 
-
-img {
-  max-width: 80%; /* Adjust size */
-  height: auto;
-}
-img {
-  display: block;
-  margin: 0 auto;
-}
-
-.item img {
-    width: 230px; 
-    height: 150px; /* Forces uniform height */
-    object-fit: cover;
-
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
       .gallery {
         flex-direction: column;
-        gap: 15px;
-        padding: 0;
         max-width: 90%;
       }
-
       .item {
         width: 100%;
         max-width: 300px;
         margin: 0 auto;
-      }
-
-      .button-home {
-        padding: 12px 25px;
-        font-size: 1.1rem;
-      }
-
-      .item a {
-        font-size: 1.2rem;
       }
     }
   </style>
@@ -194,47 +115,45 @@ img {
 <body>
 
   <a href="index.html" class="button-home">Home</a>
-
   <h1>Hoodies</h1>
 
   <div class="gallery">
-    <!-- Original Ralph Lauren hoodie -->
+
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=6990966530&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
-        <img src="https://img2.ans-media.com/i/824x1236/SS24-BLB00Z-99X_F1.jpg?v=1715237356" alt="Polo Ralph Lauren Double-Knit Zip-Up Hoodie" />
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=6990966530&ref=73572&redirected=true" target="_blank">
+        <img src="assets/raplh.png" alt="Polo Ralph Lauren Double-Knit Zip-Up Hoodie" />
         Polo Ralph Lauren Double-Knit Zip-Up Hoodie
       </a>
     </div>
 
-    <!-- New hoodie items -->
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=taobao&id=657044854028&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
+      <a href="https://cnfans.com/product/?shop_type=taobao&id=657044854028&ref=73572&redirected=true" target="_blank">
         <img src="https://grailpoint.com/wp-content/uploads/2020/09/44-1.jpg" alt="Revenge Hoodies" />
         Revenge Hoodies
       </a>
     </div>
 
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=taobao&id=610091368671&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
-        <img src="https://img.alicdn.com/bao/uploaded/i4/1645018426/O1CN0192OHRm2C79q23ZXGM_!!1645018426.jpg" alt="Supreme Box Logo Hoodie" />
+      <a href="https://cnfans.com/product/?shop_type=taobao&id=610091368671&ref=73572&redirected=true" target="_blank">
+        <img src="https://krkkicks.pl/wp-content/uploads/2023/03/ksamf.png" alt="Supreme Box Logo Hoodie" />
         Supreme Box Logo Hoodie
       </a>
     </div>
 
     <div class="item">
-      <a href="https://www.cnfanssheets.com/products/bunch-of-trapstar-hoodies-28-variants" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.cnfanssheets.com/products/bunch-of-trapstar-hoodies-28-variants" target="_blank">
         <img src="https://img.alicdn.com/bao/uploaded/i2/34964239/O1CN014mFoQT1hBVyF2qBS8_!!34964239.jpg" alt="Trapstar Hoodies" />
         Trapstar Hoodies
       </a>
     </div>
 
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=6553113574&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
-        <img src="https://images.stockx.com/images/Nike-Tech-Fleece-Hoodie-White-Black-v2.jpg?fit=fill&bg=FFFFFF&w=1200&h=857&q=60&dpr=1&trim=color&updated_at=1694109676" alt="Nike Tech Fleece Hoodies" />
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=6553113574&ref=73572&redirected=true" target="_blank">
+        <img src="assets/tech.png" alt="Nike Tech Fleece Hoodies" />
         Nike Tech Fleece Hoodies
       </a>
     </div>
-  </div>
 
+  </div>
 </body>
 </html>
