@@ -2,14 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SwampSheets</title>
   <style>
-    @keyframes rainbowText {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
     body {
       margin: 0;
       padding: 20px;
@@ -23,34 +18,17 @@
       min-height: 100vh;
     }
 
-    /* Rainbow animated text class */
-    .rainbow-text {
-      background: linear-gradient(
-        270deg,
-        red,
-        orange,
-        yellow,
-        green,
-        blue,
-        indigo,
-        violet,
-        red
-      );
-      background-size: 1400% 1400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbowText 6s ease infinite;
-      background-clip: text;
-      color: transparent;
+    h1 {
+      font-size: 2rem;
+      color: #fff;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
-    /* Category heading style */
     h2.category {
-      margin-top: 40px;
+      margin-top: 30px;
       margin-bottom: 20px;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
     }
 
     h2.category a {
@@ -62,13 +40,71 @@
     h2.category a:hover {
       text-decoration: underline;
     }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      padding: 10px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .item {
+      animation: rainbowItem 4s infinite linear;
+      padding: 10px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 200px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      background-color: transparent;
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .item a {
+      display: block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    @keyframes rainbowItem {
+      0%   { background-color: #FF0000; }
+      14%  { background-color: #FF7F00; }
+      28%  { background-color: #FFFF00; }
+      42%  { background-color: #00FF00; }
+      56%  { background-color: #0000FF; }
+      70%  { background-color: #4B0082; }
+      84%  { background-color: #8B00FF; }
+      100% { background-color: #FF0000; }
+    }
+
+    /* Rainbow text animation */
+    @keyframes rainbowText {
+      0% { color: red; }
+      20% { color: orange; }
+      40% { color: yellow; }
+      60% { color: green; }
+      80% { color: blue; }
+      100% { color: violet; }
+    }
+
+    h1, h2 a {
+      animation: rainbowText 3s linear infinite;
+      transition: color 1s ease-in-out;
+    }
   </style>
 </head>
 <body>
 
-  <h1 class="rainbow-text">SwampReps</h1>
+  <h1>SwampReps</h1>
 
-  <!-- Category heading renamed to Shoes -->
   <h2 class="category">
     <a href="nike.html" target="_blank">Shoes</a>
   </h2>
