@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SwampSheets</title>
+  <title>Hoodies – SwampSheets</title>
   <style>
     body {
       margin: 0;
@@ -21,58 +21,52 @@
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
       margin-bottom: 40px;
     }
-
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
     }
-
     .item {
       background: rgba(255, 255, 255, 0.8);
-      padding: 20px;
+      padding: 10px;
       border-radius: 10px;
       width: 200px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 1.3rem;
       color: #111;
       text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
-
-    .item:hover {
-      background-color: #ffd700;
-      color: #000;
+    .item img {
+      width: 100%;
+      border-radius: 8px;
       cursor: pointer;
     }
-
-    @media (max-width: 600px) {
-      .gallery {
-        flex-direction: column;
-        max-width: 100%;
-        gap: 15px;
-      }
-
-      .item {
-        width: 100%;
-      }
+    .item a {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #007bff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .item a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <h1>best cnfans spreadsheet</h1>
+  <h1>Hoodies</h1>
 
   <div class="gallery">
-    <a href="shoes.html" class="item">Shoes</a>
-    <a href="hoodies.html" class="item">Hoodies</a>
+    <div class="item">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=7250735527&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
+        <img src="https://si.geilicdn.com/open1757168466-1234478995-244000000190a6206c8e0a210559_1920_1920.jpg" alt="Ralph Lauren Zip Hoodie" />
+        Ralph Lauren Zip Hoodie
+      </a>
+    </div>
   </div>
 
 </body>
