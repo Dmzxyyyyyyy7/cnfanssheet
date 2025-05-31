@@ -21,6 +21,22 @@
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
       margin-bottom: 40px;
     }
+    .button-home {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+    .button-home:hover {
+      background: white;
+      color: black;
+    }
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -32,24 +48,13 @@
       max-width: 1000px;
       margin: 0 auto;
     }
-    /* Rainbow animation for each item */
-    @keyframes rainbowItem {
-      0%   { background-color: #FF0000; }
-      14%  { background-color: #FF7F00; }
-      28%  { background-color: #FFFF00; }
-      42%  { background-color: #00FF00; }
-      56%  { background-color: #0000FF; }
-      70%  { background-color: #4B0082; }
-      84%  { background-color: #8B00FF; }
-      100% { background-color: #FF0000; }
-    }
     .item {
-      animation: rainbowItem 4s infinite linear;
       padding: 10px;
       border-radius: 10px;
       width: 200px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       color: black;
+      background: rgba(255, 255, 255, 0.8);
     }
     .item img {
       width: 100%;
@@ -65,16 +70,18 @@
 </head>
 <body>
 
+  <a href="index.html" class="button-home">Home</a>
+
   <h1>Shoes</h1>
 
   <div class="gallery">
     <div class="item">
       <a href="https://cnfans.com/product/?shop_type=weidian&id=7268062696&ref=73572&redirected=true" target="_blank">
-        <img src="https://si.geilicdn.com/pcitem1888104055-19a800000192e802daa20a239846-unadjust_1200_1200.png" alt="Jordan 4s">
+        <img src="https://si.geilicdn.com/pcitem1888104055-19a800000192e802daa20a239846-unadjust_1200_1200.png" alt="Jordan 4s" />
         Jordan 4s
       </a>
     </div>
-    <!-- Add more shoes here if you want -->
+    <!-- Add more shoes here -->
   </div>
 
 </body>

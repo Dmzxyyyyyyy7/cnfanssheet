@@ -17,73 +17,51 @@
       min-height: 100vh;
     }
     h1 {
-      font-size: 3rem;
-      font-weight: bold;
+      color: black;
+      font-family: 'Bestime', cursive;
+      text-shadow: 0 0 10px pink;
+      font-weight: 700;
       margin-bottom: 40px;
-      /* Rainbow text effect */
-      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
-      background-size: 1400% 1400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbowText 8s linear infinite;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
     }
-    @keyframes rainbowText {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-    .categories {
+    .category-list {
       display: flex;
       justify-content: center;
-      gap: 40px;
       flex-wrap: wrap;
-      max-width: 600px;
+      gap: 30px;
+      max-width: 800px;
       margin: 0 auto;
     }
     .category {
-      background: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       padding: 20px 30px;
-      width: 150px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      cursor: pointer;
-      color: #111;
+      font-size: 1.5rem;
       font-weight: bold;
-      font-size: 1.2rem;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
       text-decoration: none;
-      transition: background 0.3s ease, transform 0.3s ease;
-      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      width: 180px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
     }
     .category:hover {
-      background: #007bff;
-      color: white;
-      transform: scale(1.1);
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2.2rem;
-        margin-bottom: 30px;
-      }
-      .categories {
-        gap: 20px;
-      }
-      .category {
-        width: 120px;
-        padding: 15px 20px;
-        font-size: 1rem;
-      }
+      background-color: rgba(255, 192, 203, 0.8);
+      color: black;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <h1>SwampSheets</h1>
+  <h1>SwampReps</h1>
 
-  <div class="categories">
+  <div class="category-list">
     <a href="shoes.html" class="category">Shoes</a>
     <a href="hoodies.html" class="category">Hoodies</a>
+    <a href="tshirts.html" class="category">T-shirts</a>
+    <a href="jackets.html" class="category">Jackets</a>
+    <a href="pantsshorts.html" class="category">Pants/Shorts</a>
+    <a href="hats.html" class="category">Hats</a>
   </div>
 
 </body>
