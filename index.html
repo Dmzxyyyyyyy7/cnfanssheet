@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SwampSheets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwampReps – Mobile Friendly</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       padding: 20px;
@@ -17,52 +21,55 @@
       min-height: 100vh;
     }
     h1 {
-      color: black;
       font-family: 'Bestime', cursive;
-      text-shadow: 0 0 10px pink;
+      font-size: 2.5rem;
+      color: black;
+      text-shadow: 0 0 10px pink, 0 0 20px pink;
       font-weight: 700;
       margin-bottom: 40px;
     }
-    .category-list {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
     .category {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 20px 30px;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: white;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-      text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      width: 180px;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+      margin: 15px 0;
     }
-    .category:hover {
-      background-color: rgba(255, 192, 203, 0.8);
+    .category a {
+      display: inline-block;
+      padding: 12px 20px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid white;
+      border-radius: 8px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      transition: background 0.3s, color 0.3s;
+    }
+    .category a:hover {
+      background: white;
       color: black;
-      cursor: pointer;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .category a {
+        width: 100%;
+        padding: 14px;
+        font-size: 1rem;
+      }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Bestime&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <h1>SwampReps</h1>
 
-  <div class="category-list">
-    <a href="shoes.html" class="category">Shoes</a>
-    <a href="hoodies.html" class="category">Hoodies</a>
-    <a href="tshirts.html" class="category">T-shirts</a>
-    <a href="jackets.html" class="category">Jackets</a>
-    <a href="pantsshorts.html" class="category">Pants/Shorts</a>
-    <a href="hats.html" class="category">Hats</a>
-  </div>
+  <div class="category"><a href="shoes.html">Shoes</a></div>
+  <div class="category"><a href="hoodies.html">Hoodies</a></div>
+  <div class="category"><a href="tshirts.html">T-Shirts</a></div>
+  <div class="category"><a href="jackets.html">Jackets</a></div>
+  <div class="category"><a href="pantsshorts.html">Pants/Shorts</a></div>
+  <div class="category"><a href="hats.html">Hats</a></div>
 
 </body>
 </html>
