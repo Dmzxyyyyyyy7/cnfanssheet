@@ -8,17 +8,14 @@
       margin: 0;
       padding: 20px;
       font-family: sans-serif;
-      background-image: url('https://i.ibb.co/YTBM9HGd/swampik-reps.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      color: white;
+      background-color: white; /* changed here */
+      color: black;            /* changed here */
       text-align: center;
       min-height: 100vh;
     }
     h1 {
-      color: #fff;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      color: black;            /* changed here */
+      text-shadow: none;       /* removed shadow for clarity */
       margin-bottom: 40px;
     }
     .button-home {
@@ -26,16 +23,16 @@
       margin-bottom: 20px;
       padding: 10px 20px;
       font-size: 1rem;
-      color: white;
-      background: rgba(0, 0, 0, 0.5);
-      border: 2px solid white;
+      color: black;            /* changed here */
+      background: rgba(255, 255, 255, 0.9); /* lighter background */
+      border: 2px solid black; /* changed here */
       border-radius: 6px;
       text-decoration: none;
       transition: background 0.3s, color 0.3s;
     }
     .button-home:hover {
-      background: white;
-      color: black;
+      background: black;
+      color: white;
     }
     .gallery {
       display: flex;

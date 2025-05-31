@@ -1,57 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Shoes – SwampSheets</title>
-  <style>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap');
     body {
-      margin: 0;
+      margin: 10px;
       padding: 20px;
-      font-family: sans-serif;
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                  url('https://i.ibb.co/YTBM9HGd/swampik-reps.png') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
+      font-family: 'Roboto Mono';
+      background-color: white;
+      color: black;
       text-align: center;
       min-height: 100vh;
-
-      /* Fade-in effect */
-      opacity: 0;
-      animation: fadeIn 1.5s ease-in-out forwards;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
     h1 {
-      font-family: 'Bestime', sans-serif;
-      color: white;
+      font-family: 'Roboto Mono';
+      color: black;
       font-size: 3rem;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
       font-weight: bold;
       margin-bottom: 40px;
     }
-
     .button-home {
       display: inline-block;
       margin-bottom: 20px;
       padding: 10px 20px;
       font-size: 1rem;
-      color: white;
-      background: rgba(0, 0, 0, 0.5);
-      border: 2px solid white;
+      color: black;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid black;
       border-radius: 6px;
       text-decoration: none;
       transition: background 0.3s, color 0.3s;
     }
-
     .button-home:hover {
-      background: white;
-      color: black;
+      background: black;
+      color: white;
     }
-
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -63,7 +48,6 @@
       max-width: 1000px;
       margin: 0 auto;
     }
-
     .item {
       padding: 10px;
       border-radius: 10px;
@@ -72,61 +56,144 @@
       color: black;
       background: rgba(255, 255, 255, 0.8);
       transition: transform 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.8s ease forwards;
     }
-
+    .item:nth-child(1) { animation-delay: 0.1s; }
+    .item:nth-child(2) { animation-delay: 0.15s; }
+    .item:nth-child(3) { animation-delay: 0.2s; }
+    .item:nth-child(4) { animation-delay: 0.25s; }
+    .item:nth-child(5) { animation-delay: 0.3s; }
+    .item:nth-child(6) { animation-delay: 0.35s; }
+    .item:nth-child(7) { animation-delay: 0.4s; }
+    .item:nth-child(8) { animation-delay: 0.45s; }
+    .item:nth-child(9) { animation-delay: 0.5s; }
+    .item:nth-child(10) { animation-delay: 0.55s; }
+    .item:nth-child(11) { animation-delay: 0.6s; }
+    .item:nth-child(12) { animation-delay: 0.65s; }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
     .item:hover {
       transform: scale(1.05);
     }
-
     .item img {
-      width: 100%;
-      border-radius: 8px;
-      height: auto;
-      display: block;
-    }
-
+    width: 150px; /* Ensures all images have the same width */
+    height: auto;
+}
     .item a {
       display: block;
       margin-top: 10px;
       text-decoration: none;
-      color: #007bff;
+      color: black;
       font-weight: bold;
       font-size: 1.1rem;
+      font-family: 'Roboto Mono';
+      margin-top: 10px;
     }
-
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
       }
-
       .gallery {
         flex-direction: column;
         gap: 15px;
         padding: 0;
         max-width: 90%;
       }
-
       .item {
         width: 100%;
         max-width: 300px;
         margin: 0 auto;
       }
-
       .button-home {
         padding: 12px 25px;
         font-size: 1.1rem;
       }
-
       .item a {
         font-size: 1.2rem;
       }
     }
-
-    /* Load Bestime font */
-    @font-face {
-      font-family: 'Bestime';
-      src: url('https://fonts.cdnfonts.com/s/12626/Bestime-9Y2DK.woff') format('woff');
+  
+    .pagination {
+      margin-top: 10px;
+      text-align: center;
     }
+    .pagination a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: black;
+      font-weight: normal;
+      font-size: 1.1rem;
+    }
+    .pagination a.active {
+      font-weight: bold;
+      color: #007bff;
+    }
+    .pagination a:hover {
+      text-decoration: underline;
+    }
+    .item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: 'Roboto Mono';
+}
+
+.item a span {
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+    width: 100%;
+}
+.Jordan 4 {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.item img {
+    width: 230px; 
+    height: 150px; /* Forces uniform height */
+    object-fit: cover;
+}
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.item a span {
+    display: block;
+    margin-top: 5px; /* Adjust spacing */
+}
+.shoe-container {
+  padding: 40px; /* Adds space inside the container */
+  margin: 40px;  /* Adds space around the container */
+}
+
+
+
   </style>
 </head>
 <body>
@@ -136,89 +203,87 @@
   <h1>Shoes</h1>
 
   <div class="gallery">
+    <!-- 12 shoe items for page 1 -->
     <div class="item">
       <a href="https://cnfans.com/product/?shop_type=weidian&id=7268062696&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
-        <img src="https://si.geilicdn.com/pcitem1888104055-19a800000192e802daa20a239846-unadjust_1200_1200.png" alt="Jordan 4s" />
-        Jordan 4s
+        <img src="https://www.spicysneakers.pl/cdn/shop/files/17.png?v=1689079758&width=1200" alt="Jordan 4s" />
+        <span></span>Jordan 4s<span></span>
+        
       </a>
     </div>
-
     <div class="item">
       <a href="https://cnfans.com/product/?shop_type=weidian&id=5388870048&ref=73572" target="_blank" rel="noopener noreferrer">
-        <img src="https://si.geilicdn.com/wdseller901682345136-741000000184033575d00a23132d_2560_2560.jpg" alt="Jordan 1" />
-        Jordan 1
+        <img src="https://skstore.eu/storage/media/f1000/2023/nike/227287/air-jordan-1-retro-high-og-dz5485-130-66028d6ec18ab.jpg" alt="Jordan 1" />
+        <span></span>Jordan 1s<span></span>
       </a>
     </div>
-
     <div class="item">
       <a href="https://www.cnfanssheets.com/products/travis-scott-x-jordan-jumpman-jack" target="_blank" rel="noopener noreferrer">
-        <img src="https://si.geilicdn.com/wdseller1437660918-7bb50000018bc4928a180a23132d_1170_1170.jpg" alt="Travis Scott x Jordan Jumpman Pack" />
-        Travis Scott x Jordan Jumpman Pack
+        <img src="https://grailpoint.com/wp-content/uploads/2024/04/nike-jumpmanjack.png" alt="Travis Scott x Jordan Jumpman Pack" />
+        Travis Scott x Jordan Jumpman Jack
       </a>
     </div>
-
     <div class="item">
       <a href="https://cnfans.com/product/?shop_type=weidian&id=5781730867&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
         <img src="https://grailpoint.com/wp-content/uploads/2024/01/nike-sb-dunk-low-travis-scott.jpg" alt="Nike Dunk Low Travis Scott" />
         Nike Dunk Low Travis Scott
       </a>
     </div>
-
     <div class="item">
       <a href="https://cnfans.com/product/?shop_type=weidian&id=7313304330&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/open1733523732-1234478995-63060000019379892d910a210559_999_1001.jpg" alt="Nike Dunk Lobsters" />
         Nike Dunk Lobsters
       </a>
     </div>
-
     <div class="item">
       <a href="https://cnfans.com/product/?shop_type=weidian&id=7327230068&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
-        <img src="https://si.geilicdn.com/open1638087569-1234478995-6d0a00000193d93fbd0b0aa0834c_1170_1312.jpg" alt="More Jordan 1s" />
+        <img src="https://aplug.pl/cdn/shop/products/air-jordan-1-mid-chicago-black-toe-576654.png?v=1701244796" alt="More Jordan 1s" />
         More Jordan 1s
       </a>
     </div>
-
     <div class="item">
       <a href="https://cnfans.com/product/?shop_type=weidian&id=5159426569&ref=73572" target="_blank" rel="noopener noreferrer">
-        <img src="https://si.geilicdn.com/wdseller1437660918-7e7c00000183de9a07060a23029f_1242_1656.jpg" alt="Jordan 1 Lows" />
+        <img src="https://aplug.pl/cdn/shop/files/manualupload20241108t130825984z.png?v=1731071316" alt="Jordan 1 Lows" />
         Jordan 1 Lows
       </a>
     </div>
-
     <div class="item">
       <a href="https://cnfans.com/product/?shop_type=weidian&id=4479670015&ref=73572" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/wdseller901540167493-14e1000001786dc22e4b0a21c2a8_1125_688.jpg" alt="Nike Dunk Lows" />
         Nike Dunk Lows
       </a>
     </div>
-
     <div class="item">
       <a href="https://cnfans.com/product/?shop_type=weidian&id=4985652016&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
-        <img src="https://si.geilicdn.com/pcitem1594556374-445e00000186db167e0f0a23132e-unadjust_569_419.png" alt="Nike SB Dunk Low Chunky Dunky" />
+        <img src="https://grailpoint.com/wp-content/uploads/2020/06/chunkydunky.jpg" alt="Nike SB Dunk Low Chunky Dunky" />
         Nike SB Dunk Low Chunky Dunky
       </a>
     </div>
-
     <div class="item">
       <a href="https://cnfans.com/product/?shop_type=weidian&id=7272344656&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
-        <img src="https://si.geilicdn.com/pcitem1888104055-79cf00000192ebd952090a23038e_1200_1200.jpg" alt="Air Force 1s" />
+        <img src="https://static.nike.com/a/images/t_default/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png" alt="Air Force 1s" />
         Air Force 1s
       </a>
     </div>
-
     <div class="item">
       <a href="https://cnfans.com/product/?shop_type=weidian&id=4608345170&ref=73572" target="_blank" rel="noopener noreferrer">
-        <img src="https://si.geilicdn.com/wdseller1610144534-504d0000018f6840df890a20e35c_1242_1656.jpg" alt="Bapestas" />
+        <img src="https://static.ftshp.digital/img/p/1/2/9/9/8/7/1/1299871-full_product.jpg" alt="Bapestas" />
         Bapestas
       </a>
     </div>
-
     <div class="item">
       <a href="https://cnfans.com/product/?shop_type=weidian&id=4480454092&ref=73572" target="_blank" rel="noopener noreferrer">
-        <img src="https://si.geilicdn.com/wdseller1386929838-227f00000173d87e80db0a217216_1125_720.jpg" alt="Yeezy Slides" />
+        <img src="https://owcastore.pl/wp-content/uploads/2024/04/4169328393-1.png" alt="Yeezy Slides" />
         Yeezy Slides
+        
       </a>
     </div>
+  </div>
+
+  <div class="pagination">
+    <a href="shoes-page1.html" class="active">1</a>
+    <a href="shoes-page2.html">2</a>
+    <a href="shoes-page2.html">Next &raquo;</a>
   </div>
 
 </body>

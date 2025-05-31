@@ -1,0 +1,4 @@
+.item img {
+    width: 230px; 
+    height: 150px; /* Forces uniform height */
+    object-fit: cover;

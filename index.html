@@ -4,16 +4,17 @@
   <meta charset="UTF-8" />
   <title>SwampSheets</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Roboto Mono font import -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+
   <style>
     body {
       margin: 0;
       padding: 20px;
       font-family: sans-serif;
-      background-image: url('https://i.ibb.co/YTBM9HGd/swampik-reps.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      color: white;
+      background-color: white;
+      color: black;
       text-align: center;
       min-height: 100vh;
       opacity: 0;
@@ -27,10 +28,9 @@
     }
 
     h1 {
-      font-family: 'Bestime', sans-serif;
+      font-family: monospace;
       color: black;
       font-size: 3rem;
-      text-shadow: 0 0 8px pink, 0 0 12px pink;
       font-weight: bold;
       margin-bottom: 40px;
     }
@@ -44,20 +44,22 @@
       max-width: 800px;
     }
 
+    /* Apply Roboto Mono to category links */
     .category-link {
+      font-family: 'Roboto Mono', monospace;
       padding: 12px 20px;
       font-size: 1rem;
-      color: white;
-      background: rgba(0, 0, 0, 0.5);
-      border: 2px solid white;
+      color: black;
+      background: rgba(200, 200, 200, 0.3);
+      border: 2px solid black;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.3s, color 0.3s;
     }
 
     .category-link:hover {
-      background: white;
-      color: black;
+      background: black;
+      color: white;
     }
 
     @media (max-width: 600px) {
@@ -75,17 +77,17 @@
         padding: 10px;
       }
     }
-
-    /* Load Bestime font */
-    @font-face {
-      font-family: 'Bestime';
-      src: url('https://fonts.cdnfonts.com/s/12626/Bestime-9Y2DK.woff') format('woff');
-    }
   </style>
 </head>
 <body>
 
   <h1>Swamp Reps</h1>
+
+  <!-- Search Bar -->
+  <input type="text" id="search-bar" placeholder="Search products..." style="padding:10px; font-size:1rem; width: 100%; max-width: 400px; margin-bottom: 20px; border-radius: 6px; border: 2px solid #ccc;">
+
+  <!-- Search Results Container -->
+  <div id="search-results" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 800px; margin: 0 auto 30px;"></div>
 
   <div class="categories">
     <a href="shoes.html" class="category-link">Shoes</a>
@@ -96,6 +98,56 @@
     <a href="hats.html" class="category-link">Hats</a>
     <a href="accessories.html" class="category-link">Accessories</a>
   </div>
+
+  <script>
+    const productsData = [
+      { name: "Jordan 4s", category: "Shoes", link: "https://cnfans.com/product/?shop_type=weidian&id=7268062696&ref=73572&redirected=true", image: "https://si.geilicdn.com/pcitem1888104055-19a800000192e802daa20a239846-unadjust_1200_1200.png" },
+      { name: "Jordan 1", category: "Shoes", link: "https://cnfans.com/product/?shop_type=weidian&id=5388870048&ref=73572", image: "https://si.geilicdn.com/wdseller901682345136-741000000184033575d00a23132d_2560_2560.jpg" },
+      { name: "Travis Scott x Jordan Jumpman Pack", category: "Shoes", link: "https://www.cnfanssheets.com/products/travis-scott-x-jordan-jumpman-jack", image: "https://si.geilicdn.com/wdseller1437660918-7bb50000018bc4928a180a23132d_1170_1170.jpg" },
+      { name: "Polo Ralph Lauren Double-Knit Zip-Up Hoodie", category: "Hoodies", link: "https://cnfans.com/product/?shop_type=weidian&id=6990966530&ref=73572&redirected=true", image: "https://si.geilicdn.com/pcitem1806271682-6b020000019156da6e4c0a230115_1512_2016.jpg" },
+      { name: "Revenge Hoodies", category: "Hoodies", link: "https://cnfans.com/product/?shop_type=taobao&id=657044854028&ref=73572&redirected=true", image: "https://img.alicdn.com/bao/uploaded/i1/1870080098/O1CN01igqQOe1CavWZnReOm_!!1870080098.jpg" },
+      { name: "Supreme Box Logo Hoodie", category: "Hoodies", link: "https://cnfans.com/product/?shop_type=taobao&id=610091368671&ref=73572&redirected=true", image: "https://img.alicdn.com/bao/uploaded/i4/1645018426/O1CN0192OHRm2C79q23ZXGM_!!1645018426.jpg" },
+      { name: "Trapstar Hoodies", category: "Hoodies", link: "https://www.cnfanssheets.com/products/bunch-of-trapstar-hoodies-28-variants", image: "https://img.alicdn.com/bao/uploaded/i2/34964239/O1CN014mFoQT1hBVyF2qBS8_!!34964239.jpg" },
+      { name: "Nike Tech Fleece Hoodies", category: "Hoodies", link: "https://cnfans.com/product/?shop_type=weidian&id=6553113574&ref=73572&redirected=true", image: "https://si.geilicdn.com/pcitem1773215124-528200000195e3e3641b0a23111a_800_800.jpg" }
+    ];
+
+    const searchBar = document.getElementById('search-bar');
+    const categories = document.querySelector('.categories');
+    const resultsContainer = document.getElementById('search-results');
+
+    searchBar.addEventListener('input', () => {
+      const query = searchBar.value.trim().toLowerCase();
+
+      if (query === "") {
+        categories.style.display = 'flex';
+        resultsContainer.innerHTML = '';
+        return;
+      }
+
+      categories.style.display = 'none';
+
+      let resultsHTML = '';
+
+      for (const product of productsData) {
+        if (product.name.toLowerCase().includes(query)) {
+          resultsHTML += `
+            <a href="${product.link}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; width: 150px;">
+              <div style="background: rgba(240,240,240,0.9); border-radius: 10px; padding: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <img src="${product.image}" alt="${product.name}" style="width: 100%; border-radius: 8px; height: auto; display: block; margin-bottom: 8px;">
+                <div style="font-weight: bold; font-size: 0.9rem; color: black;">${product.name}</div>
+              </div>
+            </a>
+          `;
+        }
+      }
+
+      if (resultsHTML === '') {
+        resultsHTML = '<p style="color: black;">No products found.</p>';
+      }
+
+      resultsContainer.innerHTML = resultsHTML;
+    });
+  </script>
 
 </body>
 </html>
