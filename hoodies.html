@@ -8,19 +8,23 @@
       margin: 0;
       padding: 20px;
       font-family: sans-serif;
-      background-image: url('https://i.ibb.co/YTBM9HGd/swampik-reps.png');
-      background-repeat: no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                  url('https://i.ibb.co/YTBM9HGd/swampik-reps.png') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
       color: white;
       text-align: center;
       min-height: 100vh;
     }
+
     h1 {
-      color: #fff;
+      font-family: 'Bestime', sans-serif;
+      color: white;
+      font-size: 3rem;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      font-weight: bold;
       margin-bottom: 40px;
     }
+
     .button-home {
       display: inline-block;
       margin-bottom: 20px;
@@ -33,10 +37,12 @@
       text-decoration: none;
       transition: background 0.3s, color 0.3s;
     }
+
     .button-home:hover {
       background: white;
       color: black;
     }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -48,6 +54,7 @@
       max-width: 1000px;
       margin: 0 auto;
     }
+
     .item {
       padding: 10px;
       border-radius: 10px;
@@ -55,16 +62,79 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       color: black;
       background: rgba(255, 255, 255, 0.8);
+      transition: transform 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.8s ease forwards;
     }
+
+    .item:nth-child(1) { animation-delay: 0.1s; }
+    .item:nth-child(2) { animation-delay: 0.2s; }
+    .item:nth-child(3) { animation-delay: 0.3s; }
+    .item:nth-child(4) { animation-delay: 0.4s; }
+    .item:nth-child(5) { animation-delay: 0.5s; }
+    .item:nth-child(6) { animation-delay: 0.6s; }
+    .item:nth-child(7) { animation-delay: 0.7s; }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+    }
+
     .item img {
       width: 100%;
       border-radius: 8px;
+      height: auto;
+      display: block;
     }
+
     .item a {
       display: block;
       margin-top: 10px;
       text-decoration: none;
       color: #007bff;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .gallery {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+        max-width: 90%;
+      }
+
+      .item {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      .button-home {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+      }
+
+      .item a {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Load Bestime font */
+    @font-face {
+      font-family: 'Bestime';
+      src: url('https://fonts.cdnfonts.com/s/12626/Bestime-9Y2DK.woff') format('woff');
     }
   </style>
 </head>
@@ -75,10 +145,40 @@
   <h1>Hoodies</h1>
 
   <div class="gallery">
+    <!-- Original Ralph Lauren hoodie -->
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=7250735527&ref=73572&redirected=true" target="_blank">
-        <img src="https://si.geilicdn.com/open1757168466-1234478995-244000000190a6206c8e0a210559_1920_1920.jpg" alt="Ralph Lauren Zip Hoodie" />
-        Ralph Lauren Zip Hoodie
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=6990966530&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
+        <img src="https://si.geilicdn.com/pcitem1806271682-6b020000019156da6e4c0a230115_1512_2016.jpg" alt="Polo Ralph Lauren Double-Knit Zip-Up Hoodie" />
+        Polo Ralph Lauren Double-Knit Zip-Up Hoodie
+      </a>
+    </div>
+
+    <!-- New hoodie items -->
+    <div class="item">
+      <a href="https://cnfans.com/product/?shop_type=taobao&id=657044854028&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i1/1870080098/O1CN01igqQOe1CavWZnReOm_!!1870080098.jpg" alt="Revenge Hoodies" />
+        Revenge Hoodies
+      </a>
+    </div>
+
+    <div class="item">
+      <a href="https://cnfans.com/product/?shop_type=taobao&id=610091368671&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i4/1645018426/O1CN0192OHRm2C79q23ZXGM_!!1645018426.jpg" alt="Supreme Box Logo Hoodie" />
+        Supreme Box Logo Hoodie
+      </a>
+    </div>
+
+    <div class="item">
+      <a href="https://www.cnfanssheets.com/products/bunch-of-trapstar-hoodies-28-variants" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i2/34964239/O1CN014mFoQT1hBVyF2qBS8_!!34964239.jpg" alt="Trapstar Hoodies" />
+        Trapstar Hoodies
+      </a>
+    </div>
+
+    <div class="item">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=6553113574&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
+        <img src="https://si.geilicdn.com/pcitem1773215124-528200000195e3e3641b0a23111a_800_800.jpg" alt="Nike Tech Fleece Hoodies" />
+        Nike Tech Fleece Hoodies
       </a>
     </div>
   </div>
