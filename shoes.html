@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -16,11 +16,16 @@
       text-align: center;
       min-height: 100vh;
     }
+
     h1 {
-      color: #fff;
+      font-family: 'Bestime', sans-serif;
+      color: white;
+      font-size: 3rem;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      font-weight: bold;
       margin-bottom: 40px;
     }
+
     .button-home {
       display: inline-block;
       margin-bottom: 20px;
@@ -33,10 +38,12 @@
       text-decoration: none;
       transition: background 0.3s, color 0.3s;
     }
+
     .button-home:hover {
       background: white;
       color: black;
     }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -48,6 +55,7 @@
       max-width: 1000px;
       margin: 0 auto;
     }
+
     .item {
       padding: 10px;
       border-radius: 10px;
@@ -55,16 +63,60 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       color: black;
       background: rgba(255, 255, 255, 0.8);
+      transition: transform 0.3s;
     }
+    .item:hover {
+      transform: scale(1.05);
+    }
+
     .item img {
       width: 100%;
       border-radius: 8px;
+      height: auto;
+      display: block;
     }
+
     .item a {
       display: block;
       margin-top: 10px;
       text-decoration: none;
       color: #007bff;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .gallery {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+        max-width: 90%;
+      }
+
+      .item {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      .button-home {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+      }
+
+      .item a {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Load Bestime font */
+    @font-face {
+      font-family: 'Bestime';
+      src: url('https://fonts.cdnfonts.com/s/12626/Bestime-9Y2DK.woff') format('woff');
     }
   </style>
 </head>
@@ -76,12 +128,39 @@
 
   <div class="gallery">
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=7268062696&ref=73572&redirected=true" target="_blank">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=7268062696&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
         <img src="https://si.geilicdn.com/pcitem1888104055-19a800000192e802daa20a239846-unadjust_1200_1200.png" alt="Jordan 4s" />
         Jordan 4s
       </a>
     </div>
-    <!-- Add more shoes here -->
+
+    <div class="item">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=5388870048&ref=73572" target="_blank" rel="noopener noreferrer">
+        <img src="https://si.geilicdn.com/wdseller901682345136-741000000184033575d00a23132d_2560_2560.jpg" alt="Jordan 1" />
+        Jordan 1
+      </a>
+    </div>
+
+    <div class="item">
+      <a href="https://www.cnfanssheets.com/products/travis-scott-x-jordan-jumpman-jack" target="_blank" rel="noopener noreferrer">
+        <img src="https://si.geilicdn.com/wdseller1437660918-7bb50000018bc4928a180a23132d_1170_1170.jpg" alt="Travis Scott x Jordan Jumpman Pack" />
+        Travis Scott x Jordan Jumpman Pack
+      </a>
+    </div>
+
+    <div class="item">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=5781730867&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
+        <img src="https://grailpoint.com/wp-content/uploads/2024/01/nike-sb-dunk-low-travis-scott.jpg" alt="Nike Dunk Low Travis Scott" />
+        Nike Dunk Low Travis Scott
+      </a>
+    </div>
+
+    <div class="item">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=7313304330&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
+        <img src="https://si.geilicdn.com/open1733523732-1234478995-63060000019379892d910a210559_999_1001.jpg" alt="Nike Dunk Lobsters" />
+        Nike Dunk Lobsters
+      </a>
+    </div>
   </div>
 
 </body>

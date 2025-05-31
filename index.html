@@ -2,12 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SwampReps – Mobile Friendly</title>
+  <title>SwampSheets</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
       margin: 0;
       padding: 20px;
@@ -20,56 +16,77 @@
       text-align: center;
       min-height: 100vh;
     }
+
     h1 {
-      font-family: 'Bestime', cursive;
-      font-size: 2.5rem;
+      font-family: 'Bestime', sans-serif;
       color: black;
-      text-shadow: 0 0 10px pink, 0 0 20px pink;
-      font-weight: 700;
+      font-size: 3rem;
+      text-shadow: 0 0 8px pink, 0 0 12px pink;
+      font-weight: bold;
       margin-bottom: 40px;
     }
-    .category {
-      margin: 15px 0;
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 0 auto;
+      max-width: 800px;
     }
-    .category a {
-      display: inline-block;
+
+    .category-link {
       padding: 12px 20px;
-      font-size: 1.2rem;
-      text-decoration: none;
+      font-size: 1rem;
       color: white;
       background: rgba(0, 0, 0, 0.5);
       border: 2px solid white;
       border-radius: 8px;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      text-decoration: none;
       transition: background 0.3s, color 0.3s;
     }
-    .category a:hover {
+
+    .category-link:hover {
       background: white;
       color: black;
     }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
       }
-      .category a {
-        width: 100%;
-        padding: 14px;
-        font-size: 1rem;
+
+      .categories {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .category-link {
+        font-size: 1.1rem;
+        padding: 10px;
       }
     }
+
+    /* Load Bestime font */
+    @font-face {
+      font-family: 'Bestime';
+      src: url('https://fonts.cdnfonts.com/s/12626/Bestime-9Y2DK.woff') format('woff');
+    }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Bestime&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <h1>SwampReps</h1>
+  <h1>Swamp Reps</h1>
 
-  <div class="category"><a href="shoes.html">Shoes</a></div>
-  <div class="category"><a href="hoodies.html">Hoodies</a></div>
-  <div class="category"><a href="tshirts.html">T-Shirts</a></div>
-  <div class="category"><a href="jackets.html">Jackets</a></div>
-  <div class="category"><a href="pantsshorts.html">Pants/Shorts</a></div>
-  <div class="category"><a href="hats.html">Hats</a></div>
+  <div class="categories">
+    <a href="shoes.html" class="category-link">Shoes</a>
+    <a href="hoodies.html" class="category-link">Hoodies</a>
+    <a href="tshirts.html" class="category-link">T-Shirts</a>
+    <a href="jackets.html" class="category-link">Jackets</a>
+    <a href="pantsshorts.html" class="category-link">Pants/Shorts</a>
+    <a href="hats.html" class="category-link">Hats</a>
+    <a href="accessories.html" class="category-link">Accessories</a>
+  </div>
 
 </body>
 </html>
