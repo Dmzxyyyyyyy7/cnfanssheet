@@ -78,29 +78,48 @@
         padding: 10px;
       }
     }
+
+    .home-link {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-family: 'Roboto Mono';
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+      border: 2px solid black;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+    .home-link:hover {
+      background-color: #f0f0f0;
+    }
+    
   </style>
 </head>
 <body>
 
   <!-- Clickable header linking to homepage -->
   <a href="index.html" style="text-decoration: none;">
-    <h1>Swamp Reps</h1>
+    <h1>SwampSheets</h1>
   </a>
 
   <!-- Search Bar -->
-  <input type="text" id="search-bar" placeholder="Search products..." style="padding:10px; font-size:1rem; width: 100%; max-width: 400px; margin-bottom: 20px; border-radius: 6px; border: 2px solid #ccc;">
+  <input type="text" id="search-bar" placeholder="Wyszukaj produkty..." style="padding:10px; font-size:1rem; width: 100%; max-width: 400px; margin-bottom: 20px; border-radius: 6px; border: 2px solid #ccc;">
 
   <!-- Search Results Container -->
   <div id="search-results" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 800px; margin: 0 auto 30px;"></div>
 
   <div class="categories">
-    <a href="shoes.html" class="category-link">Shoes</a>
-    <a href="hoodies.html" class="category-link">Hoodies</a>
-    <a href="tshirts.html" class="category-link">T-Shirts</a>
-    <a href="jackets.html" class="category-link">Jackets</a>
-    <a href="pantsshorts.html" class="category-link">Pants/Shorts</a>
-    <a href="hats.html" class="category-link">Hats</a>
-    <a href="accessories.html" class="category-link">Accessories</a>
+    <a href="shoes.html" class="category-link">Buty</a>
+    <a href="hoodies.html" class="category-link">Bluzy</a>
+    <a href="tshirts.html" class="category-link">Koszulki</a>
+    <a href="jackets.html" class="category-link">Kurtki</a>
+    <a href="pantsshorts.html" class="category-link">Spodnie/Spodenki</a>
+    <a href="hats.html" class="category-link">Czapki</a>
+    <a href="accessories.html" class="category-link">Akcesoria</a>
   </div>
 
   <script>

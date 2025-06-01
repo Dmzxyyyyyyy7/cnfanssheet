@@ -1,10 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Shoes – SwampSheets</title>
-  <style>@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap');
+  <title>Buty – SwampSheets</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap');
+
     body {
       margin: 10px;
       padding: 20px;
@@ -14,29 +15,62 @@
       text-align: center;
       min-height: 100vh;
     }
+
     h1 {
       font-family: 'Roboto Mono';
       color: black;
       font-size: 3rem;
       font-weight: bold;
+      margin-top: 40px;
       margin-bottom: 40px;
     }
-    .button-home {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 10px 20px;
+
+    .logo-container {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1001;
+    }
+
+    .logo {
+      cursor: pointer;
+      width: 60px;
+      margin: 0 auto 10px;
+      height: auto;
+      display: block;
+    }
+
+    .search-bar-container {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    #search-bar {
+      padding: 10px;
       font-size: 1rem;
-      color: black;
-      background: rgba(255, 255, 255, 0.9);
-      border: 2px solid black;
+      width: 100%;
       border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s;
+      border: 2px solid #ccc;
+      height: 30px;
     }
-    .button-home:hover {
-      background: black;
-      color: white;
+
+    .full-width-line {
+      width: 100vw;
+      height: 2px;
+      background-color: black;
+      margin: 40px 0 20px;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
     }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -48,6 +82,7 @@
       max-width: 1000px;
       margin: 0 auto;
     }
+
     .item {
       padding: 10px;
       border-radius: 10px;
@@ -60,6 +95,7 @@
       transform: translateY(20px);
       animation: fadeIn 0.8s ease forwards;
     }
+
     .item:nth-child(1) { animation-delay: 0.1s; }
     .item:nth-child(2) { animation-delay: 0.15s; }
     .item:nth-child(3) { animation-delay: 0.2s; }
@@ -72,57 +108,86 @@
     .item:nth-child(10) { animation-delay: 0.55s; }
     .item:nth-child(11) { animation-delay: 0.6s; }
     .item:nth-child(12) { animation-delay: 0.65s; }
+
     @keyframes fadeIn {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
     .item:hover {
       transform: scale(1.05);
     }
+
     .item img {
-    width: 150px; /* Ensures all images have the same width */
-    height: auto;
-}
+      width: 230px;
+      height: 150px;
+      object-fit: cover;
+    }
+
     .item a {
-      display: block;
-      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-decoration: none;
       color: black;
       font-weight: bold;
       font-size: 1.1rem;
       font-family: 'Roboto Mono';
-      margin-top: 10px;
     }
+
+    .item a span {
+      display: block;
+      margin-top: 5px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .Jordan 4 {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .shoe-container {
+      padding: 40px;
+      margin: 40px;
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
       }
+
       .gallery {
         flex-direction: column;
         gap: 15px;
         padding: 0;
         max-width: 90%;
       }
+
       .item {
         width: 100%;
         max-width: 300px;
         margin: 0 auto;
       }
-      .button-home {
-        padding: 12px 25px;
-        font-size: 1.1rem;
-      }
+
       .item a {
         font-size: 1.2rem;
       }
+
+      .search-bar-container {
+        top: 60px;
+      }
     }
-  
+
     .pagination {
       margin-top: 10px;
       text-align: center;
     }
+
     .pagination a {
       margin: 0 10px;
       text-decoration: none;
@@ -130,161 +195,120 @@
       font-weight: normal;
       font-size: 1.1rem;
     }
+
     .pagination a.active {
       font-weight: bold;
       color: #007bff;
     }
+
     .pagination a:hover {
       text-decoration: underline;
     }
-    .item a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 1.1rem;
-    font-family: 'Roboto Mono';
-}
 
-.item a span {
-    display: block;
-    margin-top: 5px;
-    text-align: center;
-    width: 100%;
-}
-.Jordan 4 {
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-top: 5px;
-}
-.item img {
-    width: 230px; 
-    height: 150px; /* Forces uniform height */
-    object-fit: cover;
-}
-.item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    .top-left-link {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 12px 12px;
+      background: white;
+      font-family: 'Roboto Mono';
+      font-weight: bold;
+      font-size: 1.6rem;
+      z-index: 1000;
+      margin: 0;
+      border: none;
+    }
 
-
-.item a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 1.1rem;
-    font-family: 'Roboto Mono', monospace;
-}
-
-.item a span {
-    display: block;
-    margin-top: 5px; /* Adjust spacing */
-}
-.shoe-container {
-  padding: 40px; /* Adds space inside the container */
-  margin: 40px;  /* Adds space around the container */
-}
-
-
-
+    .top-left-link a {
+      text-decoration: none;
+      color: black;
+    }
   </style>
 </head>
 <body>
 
-  <a href="index.html" class="button-home">Home</a>
+  <div class="top-left-link">
+    <a href="index.html">SwampSheets</a>
+  </div>
 
-  <h1>Shoes</h1>
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="assets/swamp.png" alt="Home Logo" class="logo" />
+    </a>
+  </div>
+
+  <div class="search-bar-container">
+    <input type="text" id="search-bar" placeholder="Wyszukaj produkty..." />
+  </div>
+
+  <div class="full-width-line"></div>
+
+  <div id="search-results" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 800px; margin: 0 auto 30px;"></div>
+
+<h1>
+  <a href="index.html" style="text-decoration: none; color: black; cursor: pointer;">Buty</a>
+</h1>
+
 
   <div class="gallery">
-    <!-- 12 shoe items for page 1 -->
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=7268062696&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=7268062696&ref=73572&redirected=true" target="_blank">
         <img src="https://www.spicysneakers.pl/cdn/shop/files/17.png?v=1689079758&width=1200" alt="Jordan 4s" />
-        <span></span>Jordan 4s<span></span>
-        
+        <span>Jordan 4s</span>
       </a>
     </div>
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=5388870048&ref=73572" target="_blank" rel="noopener noreferrer">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=5388870048&ref=73572" target="_blank">
         <img src="https://skstore.eu/storage/media/f1000/2023/nike/227287/air-jordan-1-retro-high-og-dz5485-130-66028d6ec18ab.jpg" alt="Jordan 1" />
-        <span></span>Jordan 1s<span></span>
+        <span>Jordan 1s</span>
       </a>
     </div>
     <div class="item">
-      <a href="https://www.cnfanssheets.com/products/travis-scott-x-jordan-jumpman-jack" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.cnfanssheets.com/products/travis-scott-x-jordan-jumpman-jack" target="_blank">
         <img src="https://grailpoint.com/wp-content/uploads/2024/04/nike-jumpmanjack.png" alt="Travis Scott x Jordan Jumpman Pack" />
-        Travis Scott x Jordan Jumpman Jack
+        <span>Travis Scott x Jordan Jumpman Jack</span>
       </a>
     </div>
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=5781730867&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=5781730867&ref=73572&redirected=true" target="_blank">
         <img src="https://grailpoint.com/wp-content/uploads/2024/01/nike-sb-dunk-low-travis-scott.jpg" alt="Nike Dunk Low Travis Scott" />
-        Nike Dunk Low Travis Scott
+        <span>Nike Dunk Low Travis Scott</span>
       </a>
     </div>
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=7313304330&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=7313304330&ref=73572&redirected=true" target="_blank">
         <img src="https://si.geilicdn.com/open1733523732-1234478995-63060000019379892d910a210559_999_1001.jpg" alt="Nike Dunk Lobsters" />
-        Nike Dunk Lobsters
+        <span>Nike Dunk Lobsters</span>
       </a>
     </div>
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=7327230068&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=7327230068&ref=73572&redirected=true" target="_blank">
         <img src="https://aplug.pl/cdn/shop/products/air-jordan-1-mid-chicago-black-toe-576654.png?v=1701244796" alt="More Jordan 1s" />
-        More Jordan 1s
+        <span>More Jordan 1s</span>
       </a>
     </div>
     <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=5159426569&ref=73572" target="_blank" rel="noopener noreferrer">
+      <a href="https://cnfans.com/product/?shop_type=weidian&id=5159426569&ref=73572" target="_blank">
         <img src="https://aplug.pl/cdn/shop/files/manualupload20241108t130825984z.png?v=1731071316" alt="Jordan 1 Lows" />
-        Jordan 1 Lows
-      </a>
-    </div>
-    <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=4479670015&ref=73572" target="_blank" rel="noopener noreferrer">
-        <img src="https://si.geilicdn.com/wdseller901540167493-14e1000001786dc22e4b0a21c2a8_1125_688.jpg" alt="Nike Dunk Lows" />
-        Nike Dunk Lows
-      </a>
-    </div>
-    <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=4985652016&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
-        <img src="https://grailpoint.com/wp-content/uploads/2020/06/chunkydunky.jpg" alt="Nike SB Dunk Low Chunky Dunky" />
-        Nike SB Dunk Low Chunky Dunky
-      </a>
-    </div>
-    <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=7272344656&ref=73572&redirected=true" target="_blank" rel="noopener noreferrer">
-        <img src="https://static.nike.com/a/images/t_default/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png" alt="Air Force 1s" />
-        Air Force 1s
-      </a>
-    </div>
-    <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=4608345170&ref=73572" target="_blank" rel="noopener noreferrer">
-        <img src="https://static.ftshp.digital/img/p/1/2/9/9/8/7/1/1299871-full_product.jpg" alt="Bapestas" />
-        Bapestas
-      </a>
-    </div>
-    <div class="item">
-      <a href="https://cnfans.com/product/?shop_type=weidian&id=4480454092&ref=73572" target="_blank" rel="noopener noreferrer">
-        <img src="https://owcastore.pl/wp-content/uploads/2024/04/4169328393-1.png" alt="Yeezy Slides" />
-        Yeezy Slides
-        
+        <span>Jordan 1 Lows</span>
       </a>
     </div>
   </div>
 
-  <div class="pagination">
-    <a href="shoes-page1.html" class="active">1</a>
-    <a href="shoes-page2.html">2</a>
-    <a href="shoes-page2.html">Next &raquo;</a>
-  </div>
+  <!-- JavaScript to enable search -->
+  <script>
+    const searchInput = document.getElementById('search-bar');
+    const items = document.querySelectorAll('.gallery .item');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(query) ? 'block' : 'none';
+      });
+    });
+  </script>
 
 </body>
 </html>

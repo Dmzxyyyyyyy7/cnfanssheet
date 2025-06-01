@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Jackets – SwampSheets</title>
+  <title>Kurtki – SwampSheets</title>
   <style>
    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
    
     body {
-      margin: 0;
+      margin: 10px;
       padding: 20px;
-      font-family: 'Roboto Mono';
+      font-family: 'Roboto Mono', monospace;
+      font-weight: bold;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       color: black;
       text-align: center;
       min-height: 100vh;
+      position: relative;
     }
 
     h1 {
@@ -24,22 +26,73 @@
       margin-bottom: 40px;
     }
 
-    .button-home {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 10px 20px;
-      font-size: 1rem;
-      color: black;
+    /* Top-left link */
+    .top-left-link {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 2px 6px;
       background: white;
-      border: 2px solid black;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s;
+      font-family: 'Roboto Mono';
+      font-weight: bold;
+      font-size: 1.6rem;
+      z-index: 1000;
+      margin: 0;
+      border-radius: 4px;
+      border: none;
     }
 
-    .button-home:hover {
-      background: white;
+    .top-left-link a {
+      text-decoration: none;
       color: black;
+    }
+
+    /* Logo top-right */
+    .logo-container {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1001;
+    }
+
+    .logo {
+      cursor: pointer;
+      width: 60px;
+      height: auto;
+      display: block;
+    }
+
+    /* Search bar centered top */
+    .search-bar-container {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    #search-bar {
+      padding: 10px;
+      font-size: 1rem;
+      width: 100%;
+      border-radius: 6px;
+      border: 2px solid #ccc;
+      height: 30px;
+    }
+
+    /* Full width black line */
+    .full-width-line {
+      width: 100vw;
+      height: 2px;
+      background-color: black;
+      margin: 40px 0 20px;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
     }
 
     .gallery {
@@ -55,10 +108,9 @@
     .item {
       background: rgba(255, 255, 255, 0.8);
       padding: 10px;
-       width: 100%;
       max-width: 300px;
-      border-radius: 10px;
       width: 200px;
+      border-radius: 10px;
       font-weight: bold;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       color: #111;
@@ -72,6 +124,7 @@
 
     .item img {
       width: 100%;
+      max-width: 500px;
       border-radius: 8px;
       cursor: pointer;
     }
@@ -80,6 +133,8 @@
       display: block;
       margin-top: 10px;
       font-weight: bold;
+      width: 230px;
+      height: 150px;
       color: black;
       text-decoration: none;
       cursor: pointer;
@@ -111,13 +166,44 @@
         max-width: 300px;
         padding: 15px;
       }
+
+      /* Move search bar down so it doesn't overlap the logo and top-left */
+      .search-bar-container {
+        top: 60px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <a href="index.html" class="button-home">Home</a>
-  <h1>Jackets</h1>
+  <!-- Top-left link -->
+  <div class="top-left-link">
+    <a href="index.html">SwampSheets</a>
+  </div>
+
+  <!-- Logo top-right -->
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="assets/swamp.png" alt="Home Logo" class="logo" />
+    </a>
+  </div>
+
+  <!-- Search bar centered -->
+  <div class="search-bar-container">
+    <input type="text" id="search-bar" placeholder="Wyszukaj produkty..." />
+  </div>
+
+  <!-- Black full width line -->
+  <div class="full-width-line"></div>
+
+<h1>
+  <a href="index.html" style="text-decoration: none; color: black; cursor: pointer;">Kurtki</a>
+</h1>
+
 
   <div class="gallery">
     <div class="item">
@@ -127,6 +213,21 @@
       </a>
     </div>
   </div>
+
+  <!-- Search filtering JavaScript -->
+  <script>
+    const searchInput = document.getElementById('search-bar');
+    const items = document.querySelectorAll('.gallery .item');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(query) ? 'block' : 'none';
+      });
+    });
+  </script>
 
 </body>
 </html>

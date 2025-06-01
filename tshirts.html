@@ -1,111 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
   <meta charset="UTF-8" />
-  <title>T-Shirts – SwampSheets</title>
+  <title>Koszulki – SwampSheets</title>
   <style>
-    /* Import Roboto Mono font from Google Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
     body {
-      margin: 10;
+      margin: 10px;
       padding: 20px;
-      font-family: 'Roboto Mono';
-      background-color: white;
+      font-family: 'Roboto Mono', monospace;
+      font-weight: bold;
+      background: white;
       color: black;
       text-align: center;
       min-height: 100vh;
+      position: relative;
     }
+
     h1 {
       color: black;
-      text-shadow: none;
+      font-size: 3rem;
       margin-bottom: 40px;
+      font-weight: bold;
     }
-    .button-home {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 10px 20px;
-      font-size: 1rem;
-      color: black;
-      background: rgba(255, 255, 255, 0.9);
-      border: 2px solid black;
-      border-radius: 6px;
+
+    /* Top-left link */
+    .top-left-link {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 2px 2px;
+      background: white;
+      font-family: 'Roboto Mono';
+      font-weight: bold;
+      font-size: 1.6rem;
+      z-index: 1000;
+      margin: 0;
+      border: none;
+    }
+
+    .top-left-link a {
       text-decoration: none;
-      transition: background 0.3s, color 0.3s;
+      color: black;
     }
-    .button-home:hover {
-      background: black;
-      color: white;
+
+    /* Logo top-right */
+    .logo-container {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1001;
     }
+
+    .logo {
+      cursor: pointer;
+      width: 60px;
+      margin: 0 auto 10px;
+      height: auto;
+      display: block;
+    }
+
+    /* Search bar centered top */
+    .search-bar-container {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    #search-bar {
+      padding: 10px;
+      font-size: 1rem;
+      width: 100%;
+      border-radius: 6px;
+      border: 2px solid #ccc;
+      height: 30px;
+    }
+
+    /* Full width black line */
+    .full-width-line {
+      width: 100vw;
+      height: 2px;
+      background-color: black;
+      margin: 40px 0 20px;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    /* Gallery styling */
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      background-color: transparent;
-      padding: 10px;
-      border-radius: 10px;
       max-width: 1000px;
       margin: 0 auto;
     }
+
     .item {
+      background: rgba(255, 255, 255, 0.9);
       padding: 10px;
       border-radius: 10px;
-      width: 200px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 230px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       color: black;
-      background: rgba(255, 255, 255, 0.8);
-
-      /* Fade-in animation */
+      font-family: 'Roboto Mono', monospace;
+      transition: transform 0.3s;
       opacity: 0;
-      animation: fadeIn 1s ease forwards;
+      transform: translateY(20px);
+      animation: fadeIn 0.8s ease forwards;
     }
+
+    .item:hover {
+      transform: scale(1.05);
+    }
+
+    .item img {
+      width: 200px !important;
+      height: 230px !important;
+      object-fit: cover !important;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+
     .item a {
       display: block;
+      margin-top: 10px;
       text-decoration: none;
       color: black;
       font-weight: bold;
-      text-align: center;
-    }
-    .item a:hover {
-      color: #555;
-    }
-    .item a img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .item a span {
-      display: block;
-      margin-top: 10px;
+      font-size: 1.1rem;
     }
 
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: none;
-      }
       from {
         opacity: 0;
         transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .gallery {
+        flex-direction: column;
+        max-width: 90%;
+      }
+      .item {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      /* Move search bar down so it doesn't overlap the logo and top-left */
+      .search-bar-container {
+        top: 60px;
+      }
+
+      h1 {
+        font-size: 2rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <a href="index.html" class="button-home">Home</a>
+  <!-- Top-left link -->
+  <div class="top-left-link">
+    <a href="index.html">SwampSheets</a>
+  </div>
 
-  <h1>T-Shirts</h1>
+  <!-- Logo top-right -->
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="assets/swamp.png" alt="Home Logo" class="logo" />
+    </a>
+  </div>
+
+  <!-- Search bar centered -->
+  <div class="search-bar-container">
+    <input type="text" id="search-bar" placeholder="Wyszukaj produkty..." />
+  </div>
+
+  <!-- Black full width line -->
+  <div class="full-width-line"></div>
+
+<h1>
+  <a href="index.html" style="text-decoration: none; color: black; cursor: pointer;">Koszulki/a>
+</h1>
+
 
   <div class="gallery">
     <!-- Your products here -->
     <div class="item">
       <a href="https://cnfans.com/product/?shop_type=weidian&id=7234319492&ref=73572&redirected=true" target="_blank">
-        <img src="assets/hearts.png" alt="Chrome Hearts Tee" />
-        <span>Chrome Hearts Tees</span>
+        <img src="assets/chromehears-removebg-preview.png" alt="Chrome Hearts Tee" />
+        Koszulki Chrome Hearts
       </a>
     </div>
   </div>
+
+  <!-- Search filtering JavaScript -->
+  <script>
+    const searchInput = document.getElementById('search-bar');
+    const items = document.querySelectorAll('.gallery .item');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(query) ? 'block' : 'none';
+      });
+    });
+  </script>
 
 </body>
 </html>
